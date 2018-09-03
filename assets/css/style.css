@@ -1,0 +1,9 @@
+.carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background: url('http://placehold.it/1900x1080') no-repeat scroll center center;
+}
