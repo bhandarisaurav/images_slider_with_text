@@ -1,0 +1,1 @@
+The .navbar-brand can be applied to most elements, but an anchor works best as some elements might require utility classes or custom styles.
