@@ -1,7 +1,7 @@
 
 <?php
 $filename = "slider.txt";
-$file = fopen($filename, "r");
+$file = fopen($filename, "r+");
 
 if ($file == false) {
     echo("Error in opening file");

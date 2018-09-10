@@ -30,7 +30,23 @@
         </div>
     </div>
 </nav>
-
+<?php
+$filename = "slider.txt";
+$file = fopen($filename, "r+");
+$flag = 0;
+if ($file == true) {
+    $filename = "slider.txt";
+    $file = fopen($filename, "r+");
+    $fileSize = filesize($filename);
+    $fileText = fread($file, $fileSize);
+    if (strlen($fileText) >= 0) {
+        $flag = 1;
+    }
+    fclose($file);
+} else {
+    header("Location: index.php");
+}
+?>
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
@@ -38,9 +54,11 @@
             <img src="assets/images/icon.svg" id="icon" alt="User Icon"/>
         </div>
         <form method="POST" action="insert_slider_text.php">
-            <textarea type="text" id="login" class="fadeIn second" name="text" placeholder="Enter new slider text" required></textarea><br><br>
-            <input type="submit" name="submit" class="fadeIn fourth" value="submit">
-        <form>
+            <textarea type="text" id="login" class="fadeIn second" name="text" placeholder="Enter new slider text"
+                      required><?php if ($flag == 1) echo $fileText; else echo ""; ?></textarea><br><br>
+            <input type="submit" name="submit"
+                   class="fadeIn fourth" <?php if ($flag == 0) echo 'value="Submit"';else echo 'value="Update";' ?> />
+            <form>
     </div>
 </div>
 <?php include "footer.php" ?>

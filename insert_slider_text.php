@@ -32,7 +32,7 @@
 if (isset($_POST['submit'])) {
     $value = $_POST['text'];
     $filename = "slider.txt";
-    $file = fopen($filename, "w");
+    $file = fopen($filename, "w ");
 
     if ($file == false) {
         echo("Error in opening new file");
