@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
         </div>
         <form action="imageUpload.php" method="post" enctype="multipart/form-data">
             Upload a File:
-            <input type="file" name="file[]" id="file" multiple>
+            <input type="file" name="file[]" id="file" multiple required>
 <br>
 <br>
 <br>
