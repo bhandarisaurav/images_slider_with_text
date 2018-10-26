@@ -34,6 +34,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="add.php">Add Data</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="imageUpload.php">Add Image</a>
+                </li>
             </ul>
         </div>
     </div>
