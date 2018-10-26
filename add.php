@@ -26,6 +26,11 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="imageUpload.php">Add Image
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
