@@ -1,98 +1,68 @@
-<?php include "header.php" ?>
-<style>
-    .carousel-indicators li {
-        display: inline-block;
-        width: 35px;
-        height: 35px;
-        margin: 10px;
-        text-indent: 0;
-        cursor: pointer;
-        border: none;
-        border-radius: 100%;
-        background-color: #0000ff;
-        box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);
-    }
-    .carousel-indicators .active {
-        width: 40px;
-        height: 40px;
-        margin: 10px;
-        background-color: #ffff99;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en" >
 
-    <header>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+<head>
+    <meta charset="UTF-8">
+    <title>Dark blue Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-                <?php
-                $files = glob("assets/pic/*.*");
-                for ($i = 1; $i < count($files); $i++) {
-                    echo "<li data-target='#carouselExampleIndicators' data-slide-to='$i'></li>";
-                }
-                ?>
-                <!--            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>-->
-                <!--            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                <!-- Slide One - Set the background image for this slide in the line below -->
-                <?php
-                $files = glob("assets/pic/*.*");
-                for ($i = 1; $i < count($files); $i++) {
-                    $num = $files[$i];
-                    $num = "'" . $num . "'";
-//
-//                echo '<img src="'.$num.'" alt="random image">'."&nbsp;&nbsp;";
-                    if ($i == 1) {
-                        echo "
-                <div class='carousel-item active'>
-                <img src=$num style='position: absolute;top: -9999px;left: -9999px;right: -9999px;bottom: -9999px;margin: auto;'/>
-                <div class='carousel-caption d-none d-md-block'>
-                </div>
-            </div>
-                ";
-                    } else {
-                        echo "
-                <div class='carousel-item'>
-                <img src=$num style='position: absolute;top: -9999px;left: -9999px;right: -9999px;bottom: -9999px;margin: auto;'/>
-                <div class='carousel-caption d-none d-md-block'>
-                </div>
-            </div>
-                ";
-                    }
-                }
-                ?>
-                <!--            <div class="carousel-item active" style="background: url('http://placehold.it/1900x1080') no-repeat scroll center center;">-->
-                <!--                <div class="carousel-caption d-none d-md-block">-->
-                <!--                    <h3>First Slide</h3>-->
-                <!--                    <p>This is a description for the first slide.</p>-->
-                <!--                </div>-->
-                <!--            </div>-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 
-                <!-- Slide Two - Set the background image for this slide in the line below -->
-                <!--            <div class="carousel-item">-->
-                <!--                <div class="carousel-caption d-none d-md-block">-->
-                <!--                    <h3>Second Slide</h3>-->
-                <!--                    <p>This is a description for the second slide.</p>-->
-                <!--                </div>-->
-                <!--            </div>-->
-                <!-- Slide Three - Set the background image for this slide in the line below -->
-                <!--            <div class="carousel-item">-->
-                <!--                <div class="carousel-caption d-none d-md-block">-->
-                <!--                    <h3>Third Slide</h3>-->
-                <!--                    <p>This is a description for the third slide.</p>-->
-                <!--                </div>-->
-                <!--            </div>-->
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+    <link rel="stylesheet" href="assets/css/lstyle.css">
+    <style>
+        body {
+            -webkit-transform: scale(1.2);
+            -moz-transform: scale(1.2);
+            -o-transform: scale(1.2);
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+<body class="login">
+<div class="container" style="margin-top: 180px;">
+    <div class="login-container-wrapper clearfix">
+        <div class="logo">
+            <i class="fa fa-sign-in"></i>
         </div>
-    </header>
+        <div class="welcome"><strong>Welcome,</strong> please login</div>
 
-<?php include "footer.php" ?>
+        <form class="form-horizontal login-form" method="post" action="mainpage.php">
+            <div class="form-group relative">
+                <input id="login_username" class="form-control input-lg" type="text" placeholder="Username" name="username" required>
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="form-group relative password">
+                <input id="login_password" class="form-control input-lg" type="password" placeholder="Password" name="password" required>
+                <i class="fa fa-lock"></i>
+            </div>
+            <div class="form-group">
+                <button type="submit" name="submit" class="btn btn-success btn-lg btn-block">Login</button>
+            </div>
+            <div class="checkbox pull-left">
+                <label><input type="checkbox"> Remember</label>
+            </div>
+        </form>
+    </div>
+
+
+</div>
+
+</body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+
+
+
+<script  src="assets/js/lindex.js"></script>
+
+
+
+
+</body>
+
+</html>
