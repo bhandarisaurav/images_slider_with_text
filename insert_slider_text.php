@@ -11,7 +11,7 @@
                     type: "success",
                 }
             ).then(function () {
-                window.location.href = "index.php";
+                window.location.href = "mainpage.php";
             });
         }
 

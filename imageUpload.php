@@ -1,4 +1,15 @@
 <?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    echo "<SCRIPT type='text/javascript'>
+                alert('Log In First');
+                window.location.replace('index.php')
+              </SCRIPT>";
+    exit();
+}
+?>
+
+<?php
 $fileExtensions = ['jpeg','jpg','png']; // Get all the file extensions
 
 if(isset($_POST['submit'])){
@@ -14,7 +25,7 @@ if(isset($_POST['submit'])){
         move_uploaded_file($_FILES['file']['tmp_name'][$i],'assets/pic/'.$filename);
 
     }
-    header("Location: index.php");
+    header("Location: mainpage.php");
 
 }
 ?>
@@ -32,7 +43,6 @@ if(isset($_POST['submit'])){
 </head>
 </html>
 
-</form>
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <div class="fadeIn first">
